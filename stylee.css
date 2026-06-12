@@ -1,0 +1,317 @@
+/* ======================
+   VARIÁVEIS DE CORES
+====================== */
+:root {
+    --cor-preto: #1e1e1e;
+    --cor-cinza-texto: #858181;
+    --cor-azul-logo: #0056b3;
+    --cor-borda-clara: #EBEBEB;
+    --cor-azul-claro: #17A2B8;
+    /* Usado para estudante e bem-vindo */
+    --cor-cinza-escuro: #4D4D4D;
+    --cor-azul-principal: #0056A3;
+    /* Usado em botões e links de empresa */
+    --cor-branco: #ffffff;
+    --cor-sombra: #8b8b8b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-text-black {
+    color: var(--cor-preto);
+}
+
+.logo-text-secun {
+    color: var(--cor-cinza-texto);
+}
+
+.logo-text-blue {
+    color: var(--cor-azul-logo);
+}
+
+header {
+    border-bottom: solid var(--cor-borda-clara) 2.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bem-vindo {
+    color: var(--cor-azul-claro);
+}
+
+.eclipse img {
+    width: 140px;
+}
+
+.logo-text-black,
+.logo-text-secun,
+.logo-text-blue {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sub-ti {
+    color: var(--cor-cinza-escuro);
+}
+
+.botao-for {
+    display: inline-block;
+    /* Necessário para o transform funcionar */
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+
+    /* Transição suave para o tamanho e cor */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+a:hover {
+    /* Aumenta o tamanho para 1.1 (10% maior) */
+    transform: scale(1.1);
+}
+
+.estudante a {
+    background-color: var(--cor-azul-claro);
+}
+
+.estudante,
+.empresa {
+    margin: 0 40px 0px 40px;
+    padding-bottom: 14px;
+    border-radius: 24px;
+    width: 440px;
+    box-shadow: 0px 2px 6px var(--cor-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ======================
+         empresa e estudante
+======================== */
+
+.formulario {
+    box-shadow: 0px 2px 6px var(--cor-sombra);
+    padding: 45px 30px 50px 30px;
+}
+
+.formulario button {
+    background-color: var(--cor-azul-principal);
+}
+
+.formulario .button {
+    background-color: var(--cor-azul-claro);
+}
+
+.formulario a {
+    border: solid var(--cor-azul-principal);
+    color: var(--cor-azul-principal);
+}
+
+/* Remove a borda azul e o brilho ao clicar no grupo de input */
+.input-group:focus-within .form-control {
+    background-color: var(--cor-branco);
+    border-color: var(--cor-borda-clara);
+    box-shadow: none;
+}
+
+.btn-estudante {
+    background-color: var(--cor-azul-claro);
+}
+
+.gmail {
+    align-items: center;
+    width: 300px;
+    background-color: var(--cor-branco);
+}
+
+.box-empresa img {
+    width: 100px;
+}
+
+/* Esconde sempre a caixinha de seleção */
+.menu-checkbox {
+    display: none;
+}
+
+/* Esconde o ícone do hambúrguer em computadores (ecrãs grandes) */
+.menu-hamburguer {
+    display: none;
+}
+
+/* ========================================================
+   MODO TELEMÓVEL / TABLET (Ecrãs menores que 992px)
+======================================================== */
+@media (max-width: 991px) {
+
+    /* 1. Desenha o botão do hambúrguer e coloca-o no canto superior esquerdo */
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        /* Fica acima de tudo */
+        background-color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* As 3 linhas azuis do hambúrguer */
+    .menu-hamburguer .linha {
+        width: 25px;
+        height: 3px;
+        background-color: var(--cor-azul-logo, #0056A3);
+        /* Usa o seu azul */
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* 2. Atira o menu lateral para fora do ecrã (escondido à esquerda) */
+    .nav-estagios {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* -100% esconde o menu totalmente */
+        width: 280px;
+        height: 100vh;
+        z-index: 999;
+        /* Fica abaixo do botão hambúrguer */
+        padding-top: 80px;
+        /* Dá espaço para não tapar o botão hambúrguer */
+        transition: left 0.4s ease;
+        /* Animação de deslizar */
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        /* Sombra suave para destacar */
+        overflow-y: auto;
+        /* Permite rolar se o menu for muito comprido */
+    }
+
+    /* 3. QUANDO CLICAR NO HAMBÚRGUER: O menu desliza para dentro (left: 0) */
+    .menu-checkbox:checked~.nav-estagios {
+        left: 0;
+    }
+
+    /* 4. ANIMAÇÃO: Transforma o hambúrguer num "X" */
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* =============================
+    RESPONSIVIDADE
+============================= */
+
+@media (max-width: 477px) {
+    header {
+        display: flex;
+        justify-content: space-around !important;
+        flex-wrap: wrap;
+    }
+}
+
+/* Corrigido de 192px para 992px (Telas de tablet/celular grandes) */
+@media (max-width: 992px) {
+
+    /* Centraliza a imagem principal e os textos (Login, Publique vagas...) */
+    .section-empresa {
+        text-align: center;
+    }
+
+    /* Como os itens de baixo usam 'd-flex', text-align não funciona neles. 
+       Precisamos usar justify-content para centralizar os blocos no meio da tela */
+    .section-empresa .publique,
+    .section-empresa .gerencie,
+    .section-empresa .encontre {
+        justify-content: center;
+    }
+
+    /* Mantém o texto dentro do bloquinho alinhado à esquerda para não ficar bagunçado em relação ao ícone */
+    .section-empresa .publique-text {
+        text-align: left;
+    }
+}
+
+
+/* ==========================
+portal de estagios
+==========================
+*/
+
+
+.nav-estagios {
+    border-right: 4px solid var(--cor-borda-clara);
+    margin: 0;
+    width: 200px;
+    padding-bottom: 30px;
+}
+
+.box-inicio {
+
+    padding: 0px 10px 0px 10px;
+
+}
+
+
+
+
+.box-sair {
+    margin-top: 100px;
+}
+
+.nav-esagios-texto {
+    color: var(--cor-azul-principal);
+}
+
+.nav-esagios-texto-sair {
+    color: var(--cor-cinza-escuro);
+}
+
+
+/* cadastro */
+
+
+body {
+    background-color: #f8f9fa;
+}
+
+.texto-azul {
+    color: #0056A3;
+}
+
+.bg-azul {
+    background-color: #0056A3;
+}
+
+.caixa-informativa {
+    border: 3px solid #0056A3;
+    background-color: #f8f9fa;
+}
+
+.icone-redondo {
+    width: 45px;
+    height: 45px;
+    background-color: #a4c2f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0056A3;
+}
