@@ -1,4 +1,11 @@
 <?php
+session_start();
+// Se não tem crachá OU o crachá não for de aluno, expulsa para o login
+if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
+    header("Location: login_estudante.php");
+    exit; 
+}
+
 require_once 'classes/Painel.php';
 
 $usuario = new Painel();
@@ -13,7 +20,7 @@ $listaDeCandidatos = $usuario->listarCandidatos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="css/stylee.css">
     <title>Candidatos - Portal de Estágios</title>
 </head>
 
@@ -65,7 +72,7 @@ $listaDeCandidatos = $usuario->listarCandidatos();
 
             <a href="#" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
                 <img src="imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold text-muted">Sair</p>
+               <a href="index.php" class="m-3 fw-bold nav-esagios-texto-sair">Sair</a>
             </a>
         </nav>
 

@@ -1,4 +1,15 @@
 <?php
+
+session_start();
+// Se não tem crachá OU o crachá não for de empresa, expulsa para o login
+if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'empresa') {
+    header("Location: login_empresa.php");
+    exit; 
+}
+
+
+
+
 require_once 'classes/Painel.php';
 
 $usuario = new Painel();
@@ -15,7 +26,7 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Pode ser uma rota es
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylee.css">
+   <link rel="stylesheet" href="css/stylee.css">
     <title>Portal do Aluno - UniALFA</title>
     <style>
         /* Cor ciano/teal usada no painel do aluno */
@@ -68,7 +79,7 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Pode ser uma rota es
 
             <a href="#" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
                 <img src="imagens/poral-empresa/Sair.png " alt="">
-                <p class="m-3 fw-bold text-muted">Sair</p>
+               <a href="index.php" class="m-3 fw-bold nav-esagios-texto-sair">Sair</a>
             </a>
         </nav>
 

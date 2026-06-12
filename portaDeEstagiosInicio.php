@@ -1,4 +1,11 @@
 <?php
+session_start();
+// Se não tem crachá OU o crachá não for de aluno, expulsa para o login
+if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
+    header("Location: login_estudante.php");
+    exit; 
+}
+
 require_once 'classes/Painel.php';
 
 // 1. Inicia a classe
@@ -15,7 +22,7 @@ $listaDeAlunos = $usuario->listarAlunos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="stylee.css">
+   <link rel="stylesheet" href="css/stylee.css">
     <title>Portal de Estágios</title>
 </head>
 
@@ -64,12 +71,12 @@ $listaDeAlunos = $usuario->listarAlunos();
 
             <a href="" class="text-decoration-none px-3 d-flex align-items-center box-sair">
                 <img src="imagens/portal-estagio/Sair.png" style="width: 25px; height:20" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto-sair">Sair</p>
+                <a href="index.php" class="m-3 fw-bold nav-esagios-texto-sair">Sair</a>
             </a>
         </nav>
 
         <div class="m-auto section">
-            <h2>Olá, Grupo 2</h2>
+            <h2>Olá, Gruao 2</h2>
             <p>Bem-vindo ao seu painel de recrutamento.</p>
 
             <div class="  row mt-4 flex-wrap">

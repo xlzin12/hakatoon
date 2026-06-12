@@ -1,4 +1,13 @@
 <?php
+// Se o usuário já estiver logado, manda ele direto para o painel dele
+if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
+    if ($_SESSION['usuario_tipo'] === 'aluno') {
+        header("Location: painel_aluno.php");
+    } else {
+        header("Location: portaDeEstagiosInicio.php");
+    }
+    exit;
+}
 require_once 'classes/Painel.php';
 
 $painel = new Painel();
@@ -11,14 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ATENÇÃO: Os nomes das chaves ('nome', 'cnpj', etc) devem ser EXATAMENTE 
     // os mesmos que a sua Entidade Empresa.ts no Node.js está esperando!
     $dadosParaNode = [
-        'nome' => trim($_POST['nome_empresa'] ?? ''),
+        'razaoSocial' => trim($_POST['razaoSocial'] ?? ''),
         'cnpj' => trim($_POST['cnpj'] ?? ''),
         'telefone' => trim($_POST['telefone'] ?? ''),
-        'endereco' => trim($_POST['endereco'] ?? ''),
-        'nome_responsavel' => trim($_POST['nome_responsavel'] ?? ''),
-        'cpf' => trim($_POST['cpf'] ?? ''),
-        'email' => trim($_POST['email'] ?? ''),
-        'senha' => $_POST['senha'] ?? ''
+        // 'endereco' => trim($_POST['endereco'] ?? ''),
+        'nomeFantasia' => trim($_POST['nomeFantasia'] ?? ''),
+        // 'cpf' => trim($_POST['cpf'] ?? ''),
+        'emailCoportaivo' => trim($_POST['emailCoportaivo'] ?? ''),
+        'senhaHash' => $_POST['senhaHash'] ?? ''
     ];
 
     // 2. Envia para a função que criamos no Painel.php
@@ -48,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Criar Conta - UniALFA</title>
-    <link rel="stylesheet" href="stylee.css">
+   <link rel="stylesheet" href="css/stylee.css">
    
    
 </head>
@@ -60,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="imagens/logo-unialfa.png" style="width: 150px;" alt="Logo UniALFA">
         <div>
             <span class="text-muted">Já tem uma conta?</span>
-            <a href="login.php" class="text-decoration-none fw-bold texto-azul ms-1">Entrar</a>
+            <a href="empresa.php" class="text-decoration-none fw-bold texto-azul ms-1">Entrar</a>
         </div>
     </header>
 
@@ -119,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             
                             <div class="mb-3">
                                 <label class="form-label fw-bold" style="font-size: 0.85rem;">Nome da empresa <span class="text-danger">*</span></label>
-                                <input type="text" name="nome_empresa" class="form-control" placeholder="Digite o nome da empresa" required>
+                                <input type="text" name="razaoSocial" class="form-control" placeholder="Digite o nome da empresa" required>
                             </div>
 
                             <div class="row mb-3">
@@ -132,33 +141,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <input type="text" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
                                 </div>
                             </div>
-
+<!-- 
                             <div class="mb-4">
                                 <label class="form-label fw-bold" style="font-size: 0.85rem;">Endereço da empresa <span class="text-danger">*</span></label>
                                 <input type="text" name="endereco" class="form-control" placeholder="Digite o endereço completo" required>
-                            </div>
+                            </div> -->
 
                             <h6 class="texto-azul fw-bold mb-3 border-top pt-4">Dados do responsável</h6>
 
                             <div class="row mb-3">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="form-label fw-bold" style="font-size: 0.85rem;">Nome Completo <span class="text-danger">*</span></label>
-                                    <input type="text" name="nome_responsavel" class="form-control" placeholder="Digite seu nome completo" required>
+                                    <input type="text" name="nomeFantasia" class="form-control" placeholder="Digite seu nome completo" required>
                                 </div>
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <label class="form-label fw-bold" style="font-size: 0.85rem;">CPF <span class="text-danger">*</span></label>
                                     <input type="text" name="cpf" class="form-control" placeholder="000.000.000-00" required>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="row mb-4">
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <label class="form-label fw-bold" style="font-size: 0.85rem;">E-mail <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" class="form-control" placeholder="seuemail@empresa.com" required>
+                                    <input type="email" name="emailCoportaivo" class="form-control" placeholder="seuemail@empresa.com" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold" style="font-size: 0.85rem;">Senha <span class="text-danger">*</span></label>
-                                    <input type="password" name="senha" class="form-control" placeholder="Crie uma senha segura" required>
+                                    <input type="password" name="senhaHash" class="form-control" placeholder="Crie uma senha segura" required>
                                 </div>
                             </div>
 
