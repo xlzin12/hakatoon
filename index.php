@@ -14,7 +14,7 @@ session_start();
 
 <body>
     <header class="">
-        <img class="" src="../imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
+        <img class="" src="imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
     </header>
 
     <main>
@@ -24,24 +24,24 @@ session_start();
             <span class="fw-bold fs-1 logo-text-secun">UNI</span>
             <span class="fw-bold fs-1 logo-text-blue">ALFA</span>
             <br>
-            <img src="../imagens/Line 2.png" alt="divisor" class="my-3">
+            <img src="imagens/Line 2.png" alt="divisor" class="my-3">
             <p class="fw-bold fs-5 sub-ti">Conectando talentos às oportunidades locais.</p>
         </div>
 
         <div class=" d-flex justify-content-center flex-wrap gap-4 mt-5">
 
             <div class="empresa text-center border p-4 ">
-                <img src="../imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
+                <img src="imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
                 <h2>Empresa</h2>
                 <p class="p-2">Publique vagas, gerencie processos e encontre os melhores talentos</p>
-                <a href="empresa.php" class="botao-for">Entrar como Empresa ➔</a>
+                <a href="empresa/loginEmpresa.php" class="botao-for">Entrar como Empresa ➔</a>
             </div>
 
             <div class="estudante text-center border p-4 ">
-                <img src="../imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
+                <img src="imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
                 <h2>Estudante</h2>
                 <p class="p-2">Encontre oportunidades, cadastre seu currículo e inicie sua carreira</p>
-                <a href="estudante.php" class="botao-for">Entrar como Estudante ➔</a>
+                <a href="estudante/loginEstudante.php" class="botao-for">Entrar como Estudante ➔</a>
             </div>
 
         </div>

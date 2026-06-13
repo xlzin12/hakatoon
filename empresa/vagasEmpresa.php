@@ -6,7 +6,7 @@
 //     exit; 
 // }
 
-require_once 'classes/Painel.php';
+require_once '../classes/Painel.php';
 
 $usuario = new Painel();
 
@@ -20,7 +20,7 @@ $listaDeVagas = $usuario->listarVagas();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href=".../css/style.css">
     <title>Portal de Estágios</title>
 </head>
 
@@ -43,32 +43,32 @@ $listaDeVagas = $usuario->listarVagas();
 
         <nav class="nav-estagios bg-white d-flex flex-column shadow-sm border-end-3" style="width: 260px; z-index: 10;">
             
-            <a href="portaDeEstagiosInicio.php" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3">
+            <a href="inicioEmpresa.php" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3">
                 <img src="../imagens/portal-estagio/inicio.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Início</p>
             </a>
 
-            <a href="portaDeEstagiosVagas.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2" style="background-color: var(--cor-borda-clara); border-left: 4px solid var(--cor-azul-principal, #0056A3);">
+            <a href="vagasEmpresa.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2" style="background-color: var(--cor-borda-clara); border-left: 4px solid var(--cor-azul-principal, #0056A3);">
                 <img src="../imagens/portal-estagio/Vagas.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto mb-0" style="color: var(--cor-azul-principal, #0056A3);">Vagas</p>
             </a>
 
-            <a href="portalDeEsagiosCandidatos.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-candidatos py-2">
+            <a href="candidatosEmpresa.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-candidatos py-2">
                 <img src="../imagens/portal-estagio/candidatos.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Candidatos</p>
             </a>
 
-            <a href="portalDeEsagiosProcessoSeletivo.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo py-2">
+            <a href="processoEmpresa.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo py-2">
                 <img src="../imagens/portal-estagio/processo.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Processo Seletivo</p>
             </a>
 
-            <a class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
+            <a href="perfilEmpresa.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
                 <img src="../imagens/portal-estagio/Perfil.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Perfil</p>
             </a>
 
-            <a href="index.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
+            <a href="../index.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
                 <img src="../imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
                 <span class="mx-2 fw-bold nav-esagios-texto-sair  mb-0">Sair</span>
             </a>
@@ -87,7 +87,7 @@ $listaDeVagas = $usuario->listarVagas();
                         <p class="text-muted mb-0" style="font-size: 0.95rem;">Acompanhe todas as vagas da sua empresa</p>
                     </div>
                     <button class="btn btn-primary fw-bold px-4 py-2 d-flex align-items-center gap-2" style="background-color: #0056A3; border: none; border-radius: 6px;">
-                        <img src="imagens/portal-estagio/vagas/Adicionar.png" alt="" style="width: 15px;">
+                        <img src="../imagens/portal-estagio/vagas/Adicionar.png" alt="" style="width: 15px;">
                         Nova Vaga
                     </button>
                 </div>
@@ -153,7 +153,7 @@ $listaDeVagas = $usuario->listarVagas();
                         <div class="row mx-0 p-3 px-4 align-items-center border-bottom">
                             <div class="col-5 d-flex align-items-center">
                                 <div class="rounded p-3 me-3 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #f8f9fa; border: 1px solid #e9ecef;">
-                                    <img src="imagens/portal-estagio/vagas/icone-administacao.png" style="width: 30px;" alt="">
+                                    <img src="../imagens/portal-estagio/vagas/icone-administacao.png" style="width: 30px;" alt="">
                                 </div>
                                 <div>
                                     <h6 class="fw-bold mb-1 fs-5"><?php echo htmlspecialchars($vaga['titulo'] ?? 'Título não informado'); ?></h6>
@@ -182,7 +182,7 @@ $listaDeVagas = $usuario->listarVagas();
 
                             <div class="col-1 text-center">
                                 <a href="editar_vaga.php?id=<?php echo htmlspecialchars($vaga['id'] ?? ''); ?>" class="btn border fw-bold text-muted d-flex align-items-center justify-content-center gap-2 mx-auto text-decoration-none shadow-sm" style="font-size: 0.85rem; padding: 6px 12px; background-color: #fcfcfc;">
-                                    <img src="imagens/portal-estagio/vagas/lapis.png" style="width: 14px;" alt="">
+                                    <img src="../imagens/portal-estagio/vagas/lapis.png" style="width: 14px;" alt="">
                                     Editar
                                 </a>
                             </div>
