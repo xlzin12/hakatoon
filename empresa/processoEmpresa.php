@@ -62,7 +62,7 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Processo Seletivo - Portal de Estágios</title>
 
   
@@ -71,16 +71,7 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
 <body class="d-flex flex-column min-vh-100">
 
     <!-- ══ HEADER ══ -->
-    <header class="d-flex justify-content-between align-items-center bg-white py-2 px-4" style="position:relative;z-index:20;">
-        <div class="d-flex align-items-center">
-            <img src="../imagens/logo-unialfa.png" style="width:180px;" alt="Logo UniALFA">
-            <h4 class="mx-4 mb-0 text-muted fw-bold border-start ps-4" style="font-size:1.15rem;">Portal de Estágios</h4>
-        </div>
-        <div class="position-relative me-2">
-            <i class="bi bi-bell fs-4 text-secondary"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" style="font-size:.6rem;">2</span>
-        </div>
-    </header>
+    <?php include'../includes/header.php'; ?>
 
     <!-- ══ MAIN ══ -->
     <main class="d-flex flex-grow-1 align-items-stretch position-relative">
@@ -93,26 +84,7 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
         </label>
 
         <!-- ── Sidebar ── -->
-        <nav class="nav-estagios bg-white d-flex flex-column" style="z-index:10;">
-            <a href="inicioEmpresa.php">
-                <img src="../imagens/portal-estagio/inicio.png" alt=""> <span>Início</span>
-            </a>
-            <a href="vagasEmpresa.php">
-                <img src="../imagens/portal-estagio/Vagas.png" alt=""> <span>Vagas</span>
-            </a>
-            <a href="candidatosEmpresa.php">
-                <img src="../imagens/portal-estagio/candidatos.png" alt=""> <span>Candidatos</span>
-            </a>
-            <a href="processoEmpresa.php" class="ativo">
-                <img src="../imagens/portal-estagio/processo.png" alt=""> <span>Processo Seletivo</span>
-            </a>
-            <a href="perfilEmpresa.php">
-                <img src="../imagens/portal-estagio/Perfil.png" alt=""> <span>Perfil</span>
-            </a>
-            <a href="../index.php" class="mt-auto mb-3">
-                <img src="../imagens/portal-estagio/Sair.png" alt=""> <span class="text-secondary">Sair</span>
-            </a>
-        </nav>
+        <?php include '../includes/menuEmpresa.php'; ?>
 
         <!-- ── Conteúdo ── -->
         <div class="flex-grow-1 p-4 px-md-5 position-relative" style="z-index:1;">
@@ -224,15 +196,7 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
     </main>
 
     <!-- ══ FOOTER ══ -->
-    <footer class="py-3 bg-white border-top" style="position:relative;z-index:1;">
-        <div class="container text-center">
-            <p class="fw-bold text-muted mb-0" style="font-size:.9rem;">
-                &copy; 2026 Portal de Estágios
-                <span class="fw-bold logo-text-secun">UNI</span><span class="fw-bold" style="color:var(--cor-azul-principal);">ALFA</span>
-                - Todos os direitos reservados.
-            </p>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

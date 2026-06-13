@@ -52,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../assets/css/style.css?v=<?php echo time(); ?>">
     <title>Login Empresa - UniALFA</title>
 </head>
 
 <body>
     <header class=" d-flex justify-content-between align-items-center ">
-        <img class="" src="../imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
+        <img class="" src="../assets/imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
         <a href="../index.php" class="mx-4 link-secondary text-decoration-none fw-bold ">🡨 Voltar para página principal</a>
     </header>
 
@@ -66,12 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <div class="row align-items-center justify-content-center gap-5">
 
             <div class="col-12 col-lg-5 section-empresa">
-                <img src="../imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
+                <img src="../assets/imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
                 <p class="fs-1 mb-2">Login de <br> <span class="fs-1 fw-bold " style="color: #0056b3;">Empresa</span></p>
                 <p class="text-muted">Publique vagas, gerencie processos seletivos e encontre os melhores talentos</p>
 
                 <div class="publique d-flex align-items-center mb-4">
-                    <img src="../imagens/Icones vagas.png" alt="" class="me-3">
+                    <img src="../assets/imagens/Icones vagas.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Publique vagas</h3>
                         <p class="mb-0 text-muted">Divulgue oportunidades e alcance mais candidatos.</p>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 </div>
 
                 <div class="gerencie d-flex align-items-center mb-4">
-                    <img src="../imagens/Icones gerenciar.png" alt="" class="me-3">
+                    <img src="../assets/imagens/Icones gerenciar.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Gerencie processos</h3>
                         <p class="mb-0 text-muted">Acompanhe candidaturas e etapas seletivas.</p>
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 </div>
 
                 <div class="encontre d-flex align-items-center">
-                    <img src="../imagens/Icones talentos.png" alt="" class="me-3">
+                    <img src="../assets/imagens/Icones talentos.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Encontre talentos</h3>
                         <p class="mb-0 text-muted">Conecte-se com os melhores profissionais.</p>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <label class="form-label fw-bold" for="emailCorporativo">E-mail</label>
                         <div class="input-group">
                             <span class="input-group-text border-end-0 bg-white">
-                                <img src="../imagens/Frame.png" alt="" style="width: 20px;">
+                                <img src="../assets/imagens/Frame.png" alt="" style="width: 20px;">
                             </span>
                             <input type="email" class="form-control p-3 border-start-0" name="emailCorporativo" id="emailCorporativo" placeholder="seu@email.com.br" required>
                         </div>
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <label class="form-label fw-bold" for="senhaHash">Senha</label>
                         <div class="input-group">
                             <span class="input-group-text border-end-0 bg-white">
-                                <img src="../imagens/Vector.png" alt="ícone senha" style="width: 20px;">
+                                <img src="../assets/imagens/Vector.png" alt="ícone senha" style="width: 20px;">
                             </span>
                             <input type="password" class="form-control p-3 border-start-0" name="senhaHash" id="senhaHash" placeholder="Sua senha" required>
                         </div>
