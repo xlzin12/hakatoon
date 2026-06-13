@@ -5,7 +5,7 @@
 //     exit;
 // }
 
-require_once 'classes/Painel.php';
+require_once '../classes/Painel.php';
 
 $usuario = new Painel();
 
@@ -62,7 +62,7 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Processo Seletivo - Portal de Estágios</title>
 
   
@@ -94,22 +94,22 @@ if (is_string($respostaVagas) && str_contains($respostaVagas, 'ERRO')) {
 
         <!-- ── Sidebar ── -->
         <nav class="nav-estagios bg-white d-flex flex-column" style="z-index:10;">
-            <a href="portaDeEstagiosInicio.php">
+            <a href="inicioEmpresa.php">
                 <img src="../imagens/portal-estagio/inicio.png" alt=""> <span>Início</span>
             </a>
-            <a href="portaDeEstagiosVagas.php">
+            <a href="vagasEmpresa.php">
                 <img src="../imagens/portal-estagio/Vagas.png" alt=""> <span>Vagas</span>
             </a>
-            <a href="portalDeEsagiosCandidatos.php">
+            <a href="candidatosEmpresa.php">
                 <img src="../imagens/portal-estagio/candidatos.png" alt=""> <span>Candidatos</span>
             </a>
-            <a href="portalDeEsagiosProcessoSeletivo.php" class="ativo">
+            <a href="processoEmpresa.php" class="ativo">
                 <img src="../imagens/portal-estagio/processo.png" alt=""> <span>Processo Seletivo</span>
             </a>
-            <a href="#">
+            <a href="perfilEmpresa.php">
                 <img src="../imagens/portal-estagio/Perfil.png" alt=""> <span>Perfil</span>
             </a>
-            <a href="index.php" class="mt-auto mb-3">
+            <a href="../index.php" class="mt-auto mb-3">
                 <img src="../imagens/portal-estagio/Sair.png" alt=""> <span class="text-secondary">Sair</span>
             </a>
         </nav>

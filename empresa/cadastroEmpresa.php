@@ -8,7 +8,7 @@ if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
     }
     exit;
 }
-require_once 'classes/Painel.php';
+require_once '../classes/Painel.php';
 
 $painel = new Painel();
 $mensagem = ''; // Variável para mostrar alertas de sucesso ou erro na tela
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Criar Conta - UniALFA</title>
-   <link rel="stylesheet" href="css/stylee.css">
+   <link rel="stylesheet" href="../css/style.css">
    
    
 </head>
