@@ -423,6 +423,83 @@ header {
     display: none;
 }
 
+        body {
+            background-color: #f8f9fa; /* Fundo cinza super claro */
+            overflow-x: hidden;
+        }
+        
+        /* Ajuste do container principal para evitar scroll vertical excessivo */
+        .content-wrapper {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* Estilo dos Cards exatos ao da imagem */
+        .card-perfil {
+            background: #ffffff;
+            border: 1px solid var(--cor-borda-clara, #dee2e6);
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%; /* Faz os cards da mesma linha terem a mesma altura */
+        }
+
+        .card-title-perfil {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+
+        /* Logo Quadrada Grupo 2 */
+        .logo-grupo {
+            width: 110px;
+            height: 110px;
+            background-color: var(--cor-azul-principal, #0056A3);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo-grupo span:first-child { font-size: 0.85rem; letter-spacing: 1px; }
+        .logo-grupo span:last-child { font-size: 3rem; line-height: 1; }
+
+        /* Textos e Labels */
+        .text-info-label {
+            font-size: 0.85rem;
+            color: #495057;
+            margin-bottom: 6px;
+        }
+        
+        .text-info-value {
+            font-size: 0.85rem;
+            color: #212529;
+        }
+
+        .icon-small {
+            font-size: 1.1rem;
+            color: #6c757d;
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Caixinhas de Estatísticas (As 4 caixinhas pequenas) */
+        .stat-box {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .stat-box i { font-size: 1.8rem; margin-bottom: 8px; }
+        .stat-number { font-size: 1.6rem; font-weight: 800; color: #212529; margin-bottom: 2px; line-height: 1; }
+        .stat-label { font-size: 0.75rem; color: #6c757d; margin: 0; line-height: 1.2; }
+
 @media (max-width: 991px) {
     .menu-hamburguer {
         display: flex;
