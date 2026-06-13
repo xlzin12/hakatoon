@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $_SESSION['logado'] = true;
         $_SESSION['usuario_tipo'] = 'aluno';
         $_SESSION['usuario_nome'] = $resultado['resposta']['data']['nome'] ?? 'Estudante';
+        $_SESSION['usuario_id'] = $resultado['resposta']['data']['id'] ?? '';
         
         // Redireciona para o painel do aluno
         header("Location: painel_aluno.php");

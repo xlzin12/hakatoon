@@ -173,4 +173,36 @@ class Painel
             'body' => json_decode($resposta_da_api, true)
         ];
     }
+    public function buscarAluno($id) {
+        $endpoint = $this->apiUrl . "/alunos/" . $id; 
+
+        $ch = curl_init($endpoint);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET"); 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json'
+        ]);
+
+        $resposta_da_api = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($resposta_da_api, true); 
+    }
+    public function buscarVagaPorId($id) {
+        $endpoint = $this->apiUrl . "/vagas/" . $id; 
+
+        $ch = curl_init($endpoint);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET"); 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: application/json'
+        ]);
+
+        $resposta_da_api = curl_exec($ch);
+        curl_close($ch);
+
+        return json_decode($resposta_da_api, true); 
+    }
 }

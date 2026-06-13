@@ -106,4 +106,12 @@ export class AlunoController {
       next(error)
     }
   }
+  async login(req: Request, res: Response) {
+        const { emailAcademico, senha } = req.body;
+        
+        const aluno = await new AlunoService().login(emailAcademico, senha);
+        
+        // Devolve o aluno dentro de 'data' (exatamente como o seu PHP espera!)
+        return res.status(200).json({ data: aluno });
+    }
 }

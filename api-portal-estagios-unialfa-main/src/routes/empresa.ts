@@ -3,7 +3,7 @@ import { EmpresaController } from "../controllers/EmpresaController"
 
 const router = Router()
 const controller = new EmpresaController()
-
+router.post('/login', new EmpresaController().login);
 router.post("/", (req, res, next) => controller.criar(req, res, next))
 router.get("/", (req, res, next) => controller.listar(req, res, next))
 router.get("/:id", (req, res, next) => controller.buscar(req, res, next))

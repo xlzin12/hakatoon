@@ -1,10 +1,10 @@
 <?php
-session_start();
-// Se não tem crachá OU o crachá não for de aluno, expulsa para o login
-if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
-    header("Location: login_estudante.php");
-    exit; 
-}
+// session_start();
+// // Se não tem crachá OU o crachá não for de aluno, expulsa para o login
+// if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
+//     header("Location: login_estudante.php");
+//     exit; 
+// }
 
 require_once 'classes/Painel.php';
 
@@ -22,7 +22,7 @@ $listaDeAlunos = $usuario->listarAlunos();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/stylee.css">
+   <link rel="stylesheet" href="css/style.css">
     <title>Portal de Estágios</title>
 </head>
 
@@ -59,7 +59,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                 <p class="m-3 fw-bold nav-esagios-texto">Candidatos</p>
             </a>
 
-            <a class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo">
+            <a href="portalDeEsagiosProcessoSeletivo.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo">
                 <img src="imagens/portal-estagio/processo.png" style="width: 25px; height:20" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto">Processo Seletivo</p>
             </a>

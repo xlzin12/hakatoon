@@ -105,4 +105,17 @@ export class AlunoService {
     await this.buscarAlunoPorId(id)
     return this.alunoRepository.update(id, { statusAptoEstagio: false })
   }
+  async login(emailAcademico: string, senha: string) {
+        // Busca o aluno pelo email
+        const aluno = await AlunoRepository.findOneBy({ emailAcademico });
+        
+        // Se não achar o aluno ou a senha não bater, retorna erro
+        if (!aluno || aluno.senha !== senha) {
+            throw new AppError("E-mail ou senha incorretos", 401);
+        }
+        
+        return aluno;
+    }
 }
+
+

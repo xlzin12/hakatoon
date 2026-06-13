@@ -99,4 +99,11 @@ export class EmpresaController {
       next(error)
     }
   }
+  async login(req: Request, res: Response) {
+        const { emailCorporativo, senhaHash } = req.body;
+        
+        const empresa = await new EmpresaService().login(emailCorporativo, senhaHash);
+        
+        return res.status(200).json({ data: empresa });
+    }
 }

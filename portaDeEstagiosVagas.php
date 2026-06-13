@@ -1,10 +1,10 @@
 <?php
-session_start();
-// Se não tem crachá OU o crachá não for de aluno, expulsa para o login
-if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
-    header("Location: login_estudante.php");
-    exit; 
-}
+// session_start();
+// // Se não tem crachá OU o crachá não for de aluno, expulsa para o login
+// if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'aluno') {
+//     header("Location: login_estudante.php");
+//     exit; 
+// }
 
 require_once 'classes/Painel.php';
 
@@ -55,7 +55,7 @@ $listaDeVagas = $usuario->listarVagas();
                 <p class="m-3 fw-bold nav-esagios-texto">Candidatos</p>
             </a>
 
-            <a class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo">
+            <a href="portalDeEsagiosProcessoSeletivo.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo">
                 <img src="imagens/portal-estagio/processo.png" style="width: 25px; height:20" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto">Processo Seletivo</p>
             </a>

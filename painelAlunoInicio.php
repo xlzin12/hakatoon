@@ -1,11 +1,11 @@
 <?php
 
-session_start();
-// Se não tem crachá OU o crachá não for de empresa, expulsa para o login
-if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'empresa') {
-    header("Location: login_empresa.php");
-    exit; 
-}
+// session_start();
+// // Se não tem crachá OU o crachá não for de empresa, expulsa para o login
+// if (!isset($_SESSION['logado']) || $_SESSION['usuario_tipo'] !== 'empresa') {
+//     header("Location: login_empresa.php");
+//     exit; 
+// }
 
 
 
@@ -40,15 +40,14 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Pode ser uma rota es
 
     <header class="d-flex  align-items-center bg-white border-bottom shadow-sm py-2 px-4">
         <div class="d-flex  flex-wrap align-items-center w-100">
-            <img src="imagens/logo-unialfa.png" style="width: 180px;" alt="Logo UniALFA">
+            <a href="painelAlunoInicio.php"><img src="imagens/logo-unialfa.png" style="width: 180px;" alt="Logo UniALFA"></a>
             <h4 class="mx-4 mb-0 text-muted fw-bold border-start ps-4">Portal de Estágios</h4>
         </div>
     </header>
 
     <main class="d-flex flex-grow-1">
 
-        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-
+       
         <label for="menu-toggle" class="menu-hamburguer shadow-sm">
             <span class="linha"></span>
             <span class="linha"></span>
@@ -62,7 +61,7 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Pode ser uma rota es
                 <p class="m-3 fw-bold" style="color: var(--cor-aluno);">Início</p>
             </a>
 
-            <a href="#" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2">
+            <a href="painelAlunoVagas.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2">
                 <img src="imagens/poral-empresa/Vagas (1).png" alt="">
                 <p class="m-3 fw-bold " style="color: var(--cor-aluno);">Vagas</p>
             </a>
@@ -77,9 +76,9 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Pode ser uma rota es
                 <p class="m-3 fw-bold " style="color: var(--cor-aluno);">Perfil</p>
             </a>
 
-            <a href="#" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
-                <img src="imagens/poral-empresa/Sair.png " alt="">
-               <a href="index.php" class="m-3 fw-bold nav-esagios-texto-sair">Sair</a>
+            <a href="sair.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
+                <img src="imagens/poral-empresa/Sair.png" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto-sair text-muted">Sair</p>
             </a>
         </nav>
 

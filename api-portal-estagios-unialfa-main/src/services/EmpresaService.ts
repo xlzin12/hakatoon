@@ -3,6 +3,7 @@ import { AppError } from "../utils/AppError"
 import { EmpresaRepository } from "../repositories/EmpresaRepository"
 import { Empresa } from "../entities/Empresa"
 
+
 type EmpresaInput = Partial<Empresa> & { senha?: string }
 
 export class EmpresaService {
@@ -88,4 +89,7 @@ export class EmpresaService {
     await this.buscarEmpresaPorId(id)
     return this.empresaRepository.update(id, { statusAprovacao: "BLOQUEADO" })
   }
+  
+
+  
 }
