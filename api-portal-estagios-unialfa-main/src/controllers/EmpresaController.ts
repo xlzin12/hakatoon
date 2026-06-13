@@ -86,24 +86,5 @@ export class EmpresaController {
     }
   }
 
-  async bloquear(req: Request, res: Response, next: NextFunction) {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id
-      if (!id) {
-        throw new AppError("ID inválido", 400)
-      }
-
-      const empresa = await this.empresaService.bloquearEmpresa(id)
-      return res.status(200).json({ success: true, data: empresa })
-    } catch (error) {
-      next(error)
-    }
-  }
-  async login(req: Request, res: Response) {
-        const { emailCorporativo, senhaHash } = req.body;
-        
-        const empresa = await new EmpresaService().login(emailCorporativo, senhaHash);
-        
-        return res.status(200).json({ data: empresa });
-    }
+  
 }

@@ -79,39 +79,5 @@ export class AlunoController {
     }
   }
 
-  async ativarEstagio(req: Request, res: Response, next: NextFunction) {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id
-      if (!id) {
-        throw new AppError("ID inválido", 400)
-      }
-
-      const aluno = await this.alunoService.ativarStatusEstagio(id)
-      return res.status(200).json({ success: true, data: aluno })
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  async desativarEstagio(req: Request, res: Response, next: NextFunction) {
-    try {
-      const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id
-      if (!id) {
-        throw new AppError("ID inválido", 400)
-      }
-
-      const aluno = await this.alunoService.desativarStatusEstagio(id)
-      return res.status(200).json({ success: true, data: aluno })
-    } catch (error) {
-      next(error)
-    }
-  }
-  async login(req: Request, res: Response) {
-        const { emailAcademico, senha } = req.body;
-        
-        const aluno = await new AlunoService().login(emailAcademico, senha);
-        
-        // Devolve o aluno dentro de 'data' (exatamente como o seu PHP espera!)
-        return res.status(200).json({ data: aluno });
-    }
+  
 }

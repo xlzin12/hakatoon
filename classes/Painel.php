@@ -173,36 +173,48 @@ class Painel
             'body' => json_decode($resposta_da_api, true)
         ];
     }
-    public function buscarAluno($id) {
-        $endpoint = $this->apiUrl . "/alunos/" . $id; 
+   public function buscarVagas($termoPesquisa = '', $categoria = '') {
+        // Corrigido para a rota de vagas e acessando $this corretamente
+        $endpoint = $this->apiUrl . "/vagas";
+        
+        // Constrói os parâmetros de consulta (Query Params) se existirem
+        $queryParams = [];
+        if (!empty($termoPesquisa)) {
+            $queryParams['titulo'] = $termoPesquisa;
+        }
+        if (!empty($categoria)) {
+            $queryParams['categoria'] = $categoria;
+        }
 
+        if (!empty($queryParams)) {
+            $endpoint .= '?' . http_build_query($queryParams);
+        }
+
+        // Inicializa o cURL
         $ch = curl_init($endpoint);
-
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET"); 
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             'Content-Type: application/json'
         ]);
 
-        $resposta_da_api = curl_exec($ch);
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $erro_curl = curl_error($ch);
         curl_close($ch);
 
-        return json_decode($resposta_da_api, true); 
+        // Adicionado o mesmo tratamento de erro de conexão das outras funções
+        if ($erro_curl) {
+            return "ERRO DE CONEXÃO: " . $erro_curl;
+        }
+
+        // Se a API retornar sucesso, decodifica o JSON para Array do PHP
+        if ($httpCode === 200) {
+            return json_decode($response, true);
+        }
+
+        return [];
     }
-    public function buscarVagaPorId($id) {
-        $endpoint = $this->apiUrl . "/vagas/" . $id; 
-
-        $ch = curl_init($endpoint);
-
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET"); 
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json'
-        ]);
-
-        $resposta_da_api = curl_exec($ch);
-        curl_close($ch);
-
-        return json_decode($resposta_da_api, true); 
-    }
+    
+    
 }

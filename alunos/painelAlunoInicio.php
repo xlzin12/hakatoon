@@ -6,7 +6,7 @@
 //     exit; 
 // }
 
-require_once 'classes/Painel.php';
+require_once '../classes/Painel.php';
 
 // 1. Inicia a classe
 $usuario = new Painel();
@@ -26,14 +26,14 @@ $listaDeAlunos = $usuario->listarAlunos();
     <title>Portal de Estágios</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100 bg-light">
+<body class="d-flex flex-column min-vh-100">
     
-    <header class="d-flex justify-content-start border-bottom-3 bg-white py-2"> 
-        <img class="" src="imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
+    <header class="d-flex justify-content-start border-bottom"> 
+        <img class="" src="../imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
         <a href="index.php" class="mx-4 link-secondary text-decoration-none fw-bold align-self-center">Portal de Estágios</a>
     </header>
 
-    <main class="d-flex flex-grow-1 align-items-stretch ">
+    <main class="d-flex flex-grow-1 align-items-stretch">
 
         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
@@ -43,46 +43,46 @@ $listaDeAlunos = $usuario->listarAlunos();
             <span class="linha"></span>
         </label>
 
-        <nav class="nav-estagios bg-white d-flex flex-column border-end-3" style="width: 260px;">
-            <a href="portaDeEstagiosInicio.php" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3" style="background-color: var(--cor-borda-clara); border-left: 4px solid var(--cor-azul-principal);">
-                <img src="imagens/portal-estagio/inicio.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto mb-0" style="color: var(--cor-azul-principal);">Início</p>
+        <nav class="nav-estagios bg-white d-flex flex-column border-end">
+            <a href="#" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3" style="background-color: var(--cor-borda-clara);">
+                <img src="../imagens/portal-estagio/inicio.png" style="width: 25px;" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto mb-0">Início</p>
             </a>
 
             <a href="portaDeEstagiosVagas.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2">
-                <img src="imagens/portal-estagio/Vagas.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Vagas</p>
+                <img src="../imagens/portal-estagio/Vagas.png" style="width: 25px;" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto mb-0">Vagas</p>
             </a>
 
             <a href="portalDeEsagiosCandidatos.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-candidatos py-2">
-                <img src="imagens/portal-estagio/candidatos.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Candidatos</p>
+                <img src="../imagens/portal-estagio/candidatos.png" style="width: 25px;" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto mb-0">Candidatos</p>
             </a>
 
             <a href="portalDeEsagiosProcessoSeletivo.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo py-2">
-                <img src="imagens/portal-estagio/processo.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Processo Seletivo</p>
+                <img src="../imagens/portal-estagio/processo.png" style="width: 25px;" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto mb-0">Processo Seletivo</p>
             </a>
 
-            <a class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
-                <img src="imagens/portal-estagio/Perfil.png" style="width: 25px;" alt="">
-                <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Perfil</p>
+            <a href="#" class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
+                <img src="../imagens/portal-estagio/Perfil.png" style="width: 25px;" alt="">
+                <p class="m-3 fw-bold nav-esagios-texto mb-0">Perfil</p>
             </a>
 
             <a href="index.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
-                <img src="imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
-                <span class="mx-2 fw-bold nav-esagios-texto-sair  mb-0">Sair</span>
+                <img src="../imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
+                <span class="m-3 fw-bold nav-esagios-texto-sair ">Sair</span>
             </a>
         </nav>
 
-        <div class="section flex-grow-1 p-4 px-md-5 w-100">
-            <h2 class="fw-bold">Olá, Grupo 2</h2>
-            <p class="text-muted">Bem-vindo ao seu painel de recrutamento.</p>
+        <div class="section flex-grow-1 p-4 px-md-5">
+            <h2>Olá, Grupo 2</h2>
+            <p>Bem-vindo ao seu painel de recrutamento.</p>
 
             <div class="row mt-4 flex-wrap">
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <div class="box-alunos-recomendados p-4 border rounded shadow-sm bg-white h-100">
+                    <div class="box-alunos-recomendados p-4 border rounded shadow bg-white h-100">
 
                         <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
                             <h5 class="fw-bold mb-0">Alunos recomendados para você</h5>
@@ -97,7 +97,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="border rounded p-3 me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                            <img src="imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
+                                            <img src="../imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
                                         </div>
 
                                         <div>
@@ -107,7 +107,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                                 <?php echo htmlspecialchars($aluno['curso'] ?? 'Curso não informado'); ?> | RA: <?php echo htmlspecialchars($aluno['ra'] ?? 'N/A'); ?>
                                             </p>
 
-                                            <div class="d-flex flex-wrap gap-2">
+                                            <div class="d-flex gap-2">
                                                 <?php
                                                 if (!empty($aluno['habilidades']) && is_array($aluno['habilidades'])) {
                                                     foreach ($aluno['habilidades'] as $habilidade) {
@@ -135,15 +135,14 @@ $listaDeAlunos = $usuario->listarAlunos();
                 </div>
 
                 <div class="col-12 col-lg-6 mb-4">
-                    <div class="box-alunos-recomendados p-4 border rounded shadow-sm bg-white h-100">
+                    <div class="box-alunos-recomendados p-4 border rounded shadow bg-white h-100">
 
                         <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
-                            <h5 class="fw-bold mb-0">Novos Talentos na Plataforma</h5>
+                            <h5 class="fw-bold mb-0">Novos Talentos</h5>
                             <a href="#" class="text-decoration-none" style="color: var(--cor-azul-logo);">Ver Todos</a>
                         </div>
 
                         <?php
-                        // Reutilizando a mesma lista por enquanto como exemplo
                         if (!empty($listaDeAlunos['data']) && is_array($listaDeAlunos['data'])):
                             foreach ($listaDeAlunos['data'] as $aluno):
                         ?>
@@ -151,7 +150,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="border rounded p-3 me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                            <img src="imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
+                                            <img src="../imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
                                         </div>
 
                                         <div>
@@ -161,7 +160,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                                 <?php echo htmlspecialchars($aluno['curso'] ?? 'Curso não informado'); ?> | RA: <?php echo htmlspecialchars($aluno['ra'] ?? 'N/A'); ?>
                                             </p>
 
-                                            <div class="d-flex flex-wrap gap-2">
+                                            <div class="d-flex gap-2">
                                                 <?php
                                                 if (!empty($aluno['habilidades']) && is_array($aluno['habilidades'])) {
                                                     foreach ($aluno['habilidades'] as $habilidade) {
@@ -175,7 +174,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                         </div>
                                     </div>
 
-                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-outline-primary fw-bold">Ver Perfil ➔</a>
+                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-primary fw-bold" style="background-color: var(--cor-azul-principal);">Ver Perfil ➔</a>
                                 </div>
 
                             <?php
@@ -192,12 +191,12 @@ $listaDeAlunos = $usuario->listarAlunos();
         </div>
 
     </main>
-
+    
     <footer class="d-flex justify-content-center mt-auto py-3 bg-white border-top">
         <div class="container text-center">
-            <p class="fw-bold text-muted mb-0" style="font-size: 0.9rem;">&copy; 2026 Portal de Estágios
+            <p class="fw-bold mb-0">&copy; 2026 Portal de Estágios
                 <span class="fw-bold logo-text-secun">UNI</span>
-                <span class="fw-bold" style="color: var(--cor-azul-logo, #0056A3);">ALFA</span>
+                <span class="fw-bold" style="color: var(--cor-azul-logo);">ALFA</span>
                 - Todos os direitos reservados.
             </p>
         </div>

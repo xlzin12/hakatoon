@@ -7,7 +7,7 @@
 //     exit; 
 // }
 
-require_once 'classes/Painel.php';
+require_once '../classes/Painel.php';
 
 $usuario = new Painel();
 
@@ -35,7 +35,7 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Ajuste para a funç�
 
     <header class="d-flex align-items-center bg-white border-bottom shadow-sm py-2 px-4">
         <div class="d-flex flex-wrap align-items-center w-100">
-            <a href="painelAlunoInicio.php"><img src="imagens/logo-unialfa.png" style="width: 180px;" alt="Logo UniALFA"></a>
+            <a href="painelAlunoInicio.php"><img src="../imagens/logo-unialfa.png" style="width: 180px;" alt="Logo UniALFA"></a>
             <h4 class="mx-4 mb-0 text-muted fw-bold border-start ps-4">Portal de Estágios</h4>
         </div>
     </header>
@@ -53,27 +53,27 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Ajuste para a funç�
         <nav class="nav-estagios bg-white border-end" style="min-height: calc(100vh - 70px); width: 260px;">
 
             <a href="painelAlunoInicio.php" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3">
-                <img src="imagens/poral-empresa/casa.png" alt="">
+                <img src="../imagens/poral-empresa/casa.png" alt="">
                 <p class="m-3 fw-bold "  style="color: var(--cor-aluno);">Início</p>
             </a>
 
             <a href="#" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2"style="background-color: #f0f0f0; border-color: var(--cor-aluno) !important;">
-                <img src="imagens/poral-empresa/Vagas (1).png" alt="">
+                <img src="../imagens/poral-empresa/Vagas (1).png" alt="">
                 <p class="m-3 fw-bold "  style="color: var(--cor-aluno);">Vagas</p>
             </a>
 
             <a href="#" class="text-decoration-none px-3 d-flex my-1 align-items-center box-candidatos py-2 border-start border-4" >
-                <img src="imagens/poral-empresa/Candidatura.png" alt="">
+                <img src="../imagens/poral-empresa /Candidatura.png" alt="">
                 <p class="m-3 fw-bold" style="color: var(--cor-aluno);">Candidaturas</p>
             </a>
 
             <a href="#" class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
-                <img src="imagens/poral-empresa/Perfil (1).png" alt="">
+                <img src="../imagens/poral-empresa/Perfil (1).png" alt="">
                 <p class="m-3 fw-bold  "  style="color: var(--cor-aluno);">Perfil</p>
             </a>
 
             <a href="sair.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
-                <img src="imagens/poral-empresa/Sair.png" alt="">
+                <img src="../imagens/poral-empresa/Sair.png" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto-sair text-muted">Sair</p>
             </a>
         </nav>
@@ -145,7 +145,7 @@ $listaMinhasCandidaturas = $usuario->listarCandidatos(); // Ajuste para a funç�
                     
                     <div class="col-5 d-flex align-items-center">
                         <div class="rounded p-3 me-3 d-flex align-items-center justify-content-center border" style="width: 60px; height: 60px; background-color: #f8f9fa;">
-                            <img src="imagens/poral-empresa/empresa.png" style="width: 25px;" alt="Empresa">
+                            <img src="../imagens/poral-empresa/empresa.png" style="width: 25px;" alt="Empresa">
                         </div>
                         <div>
                             <h6 class="fw-bold mb-1 fs-6"><?php echo htmlspecialchars($candidatura['titulo_vaga'] ?? 'Estágio'); ?></h6>
