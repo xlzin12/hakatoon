@@ -29,7 +29,7 @@ $listaDeAlunos = $usuario->listarAlunos();
 <body class="d-flex flex-column min-vh-100 bg-light">
     
     <header class="d-flex justify-content-start border-bottom-3 bg-white py-2"> 
-        <img class="" src="imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
+        <img class="" src="../imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
         <a href="index.php" class="mx-4 link-secondary text-decoration-none fw-bold align-self-center">Portal de Estágios</a>
     </header>
 
@@ -45,32 +45,32 @@ $listaDeAlunos = $usuario->listarAlunos();
 
         <nav class="nav-estagios bg-white d-flex flex-column border-end-3" style="width: 260px;">
             <a href="portaDeEstagiosInicio.php" class="text-decoration-none px-3 d-flex align-items-center box-inicio py-2 mt-3" style="background-color: var(--cor-borda-clara); border-left: 4px solid var(--cor-azul-principal);">
-                <img src="imagens/portal-estagio/inicio.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/inicio.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto mb-0" style="color: var(--cor-azul-principal);">Início</p>
             </a>
 
             <a href="portaDeEstagiosVagas.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-vagas py-2">
-                <img src="imagens/portal-estagio/Vagas.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/Vagas.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Vagas</p>
             </a>
 
             <a href="portalDeEsagiosCandidatos.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-candidatos py-2">
-                <img src="imagens/portal-estagio/candidatos.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/candidatos.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Candidatos</p>
             </a>
 
             <a href="portalDeEsagiosProcessoSeletivo.php" class="text-decoration-none px-3 d-flex my-1 align-items-center box-processo py-2">
-                <img src="imagens/portal-estagio/processo.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/processo.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Processo Seletivo</p>
             </a>
 
             <a class="text-decoration-none px-3 d-flex my-1 align-items-center box-perfil py-2">
-                <img src="imagens/portal-estagio/Perfil.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/Perfil.png" style="width: 25px;" alt="">
                 <p class="m-3 fw-bold nav-esagios-texto text-muted mb-0">Perfil</p>
             </a>
 
             <a href="index.php" class="text-decoration-none px-3 d-flex align-items-center box-sair py-2 mt-auto mb-4">
-                <img src="imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
+                <img src="../imagens/portal-estagio/Sair.png" style="width: 25px;" alt="">
                 <span class="mx-2 fw-bold nav-esagios-texto-sair  mb-0">Sair</span>
             </a>
         </nav>
@@ -97,7 +97,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="border rounded p-3 me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                            <img src="imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
+                                            <img src="../imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
                                         </div>
 
                                         <div>
@@ -121,7 +121,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                         </div>
                                     </div>
 
-                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-primary fw-bold" style="background-color: var(--cor-azul-principal);">Ver Perfil ➔</a>
+                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-primary fw-bold" style="background-color: var(--cor-azul-principal);">Ver Perfil </a>
                                 </div>
 
                             <?php
@@ -151,7 +151,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="border rounded p-3 me-3" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
-                                            <img src="imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
+                                            <img src="../imagens/portal-estagio/usuario.png" style="width: 35px;" alt="Foto do aluno">
                                         </div>
 
                                         <div>
@@ -175,7 +175,7 @@ $listaDeAlunos = $usuario->listarAlunos();
                                         </div>
                                     </div>
 
-                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-outline-primary fw-bold">Ver Perfil ➔</a>
+                                    <a href="perfil_aluno.php?id=<?php echo htmlspecialchars($aluno['id'] ?? ''); ?>" class="btn btn-outline-primary fw-bold">Ver Perfil </a>
                                 </div>
 
                             <?php

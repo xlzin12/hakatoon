@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
 
     <header class="d-flex justify-content-between align-items-center p-3 px-5 bg-white border-bottom shadow-sm">
-        <img src="imagens/logo-unialfa.png" style="width: 150px;" alt="Logo UniALFA">
+        <img src="../imagens/logo-unialfa.png" style="width: 150px;" alt="Logo UniALFA">
         <div>
             <span class="text-muted">Já tem uma conta?</span>
             <a href="empresa.php" class="text-decoration-none fw-bold texto-azul ms-1">Entrar</a>

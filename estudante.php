@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 <body>
     <header class=" d-flex justify-content-between align-items-center ">
-        <img class="" src="imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
+        <img class="" src="../imagens/logo-unialfa.png" style="width: 200px;" alt="logo unialfa">
         <a href="index.php" class="mx-4 link-secondary text-decoration-none fw-bold ">🡨 Voltar para página principal</a>
     </header>
 
@@ -66,12 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <div class="row align-items-center justify-content-center gap-5">
 
             <div class="col-12 col-lg-5 section-empresa">
-                <img src="imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
+                <img src="../imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
                 <p class="fs-1 mb-2">Login de <br> <span class="fs-1 fw-bold " style="color: #17A2B8;">Estudante</span></p>
                 <p class="text-muted">Acesse sua conta para encontrar vagas de estágio, acompanhar candidaturas e impulsionar sua carreira.</p>
 
                 <div class="publique d-flex align-items-center mb-4">
-                    <img src="imagens/Encontrar Vagas.png" alt="" class="me-3">
+                    <img src="../imagens/Encontrar Vagas.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Encontre vagas</h3>
                         <p class="mb-0 text-muted">Busque oportunidades de estágio perto de você.</p>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 </div>
 
                 <div class="gerencie d-flex align-items-center mb-4">
-                    <img src="imagens/Acompanhar Candidaturas.png" alt="" class="me-3">
+                    <img src="../imagens/Acompanhar Candidaturas.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Acompanhe candidaturas</h3>
                         <p class="mb-0 text-muted">Veja os status de suas candidaturas em tempo real.</p>
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 </div>
 
                 <div class="encontre d-flex align-items-center">
-                    <img src="imagens/impulsione-sua-carrera.png" alt="" class="me-3">
+                    <img src="../imagens/impulsione-sua-carrera.png" alt="" class="me-3">
                     <div class="publique-text">
                         <h3 class="fs-5 mb-1 fw-bold">Impulsione sua carreira</h3>
                         <p class="mb-0 text-muted">Construa seu perfil e destaque suas habilidades.</p>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <label class="form-label fw-bold" for="emailAcademico">E-mail</label>
                         <div class="input-group">
                             <span class="input-group-text border-end-0 bg-white">
-                                <img src="imagens/Frame.png" alt="" style="width: 20px;">
+                                <img src="../imagens/Frame.png" alt="" style="width: 20px;">
                             </span>
                             <input type="email" class="form-control p-3 border-start-0" name="emailAcademico" id="emailAcademico" placeholder="seu@email.com.br" required>
                         </div>
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         <label class="form-label fw-bold" for="senha">Senha</label>
                         <div class="input-group">
                             <span class="input-group-text border-end-0 bg-white">
-                                <img src="imagens/Vector.png" alt="ícone senha" style="width: 20px;">
+                                <img src="../imagens/Vector.png" alt="ícone senha" style="width: 20px;">
                             </span>
                             <input type="password" class="form-control p-3 border-start-0" name="senha" id="senha" placeholder="Sua senha" required>
                         </div>

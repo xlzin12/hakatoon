@@ -312,3 +312,108 @@ body {
     justify-content: center;
     color: #0056A3;
 }
+
+        :root {
+            --cor-azul-principal: #0056A3;
+            --cor-borda-clara: #EBEBEB;
+        }
+
+        body { background-color: #f5f7fb; }
+
+        /* ── Header ── */
+        header { border-bottom: 2.5px solid var(--cor-borda-clara); }
+
+        /* ── Sidebar ── */
+        .nav-estagios {
+            width: 220px;
+            flex-shrink: 0;
+            border-right: 3px solid var(--cor-borda-clara);
+        }
+
+        .nav-estagios a {
+            display: flex;
+            align-items: center;
+            padding: 13px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #6c757d;
+            transition: background-color .2s;
+        }
+
+        .nav-estagios a:hover { background-color: #f0f4f8; transform: none; }
+
+        .nav-estagios a.ativo {
+            background-color: #f0f4f8;
+            border-left: 4px solid var(--cor-azul-principal);
+            color: var(--cor-azul-principal);
+        }
+
+        .nav-estagios a img { width: 22px; margin-right: 12px; flex-shrink: 0; }
+
+        /* ── Grafismo topo direito ── */
+        .bg-grafismo {
+            position: absolute;
+            top: 0; right: 0;
+            width: 320px; height: 220px;
+            background: radial-gradient(circle at top right, #17a2b8 0%, transparent 65%);
+            opacity: .15;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── Tabela ── */
+        .tabela-header {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .6px;
+            color: #8a94a6;
+            background-color: #f8fafc;
+        }
+
+        .linha-processo { transition: background-color .2s; }
+        .linha-processo:hover { background-color: #f8fafc; }
+
+        .icone-vaga {
+            width: 46px; height: 46px;
+            background-color: #dbeafe;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Badge status */
+        .badge-ativa   { background-color: #dcfce7; color: #16a34a; }
+        .badge-fechada { background-color: #fee2e2; color: #dc2626; }
+
+        /* ── Hambúrguer (mobile) ── */
+        .menu-checkbox  { display: none; }
+        .menu-hamburguer { display: none; }
+
+        @media (max-width: 991px) {
+            .menu-hamburguer {
+                display: flex; flex-direction: column; gap: 5px;
+                cursor: pointer; position: fixed;
+                top: 18px; left: 18px; z-index: 1000;
+                background: #fff; padding: 10px; border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,.12);
+            }
+            .menu-hamburguer .linha {
+                width: 24px; height: 3px;
+                background-color: var(--cor-azul-principal);
+                border-radius: 2px; transition: all .3s;
+            }
+            .nav-estagios {
+                position: fixed; top: 0; left: -100%;
+                width: 260px; height: 100vh; z-index: 999;
+                padding-top: 70px; transition: left .35s ease;
+                box-shadow: 2px 0 15px rgba(0,0,0,.1);
+                overflow-y: auto;
+            }
+            .menu-checkbox:checked ~ .nav-estagios { left: 0; }
+            .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(2) { opacity: 0; }
+            .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+    
