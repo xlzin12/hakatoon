@@ -7,9 +7,9 @@ session_start();
 //     exit;
 // }
 
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEstudante.php';
 
-$painel = new Painel();
+$painel = new PainelEstudante();
 
 // ── Busca vagas e candidaturas da API Node.js ─────────────────────────────────
 $respostaVagas       = $painel->listarVagas();        // GET /vagas

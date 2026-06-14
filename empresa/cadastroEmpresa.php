@@ -8,9 +8,9 @@ if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
     }
     exit;
 }
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEmpresa.php';
 
-$painel = new Painel();
+$painel = new PainelEmpresa();
 $mensagem = ''; // Variável para mostrar alertas de sucesso ou erro na tela
 
 // Verifica se o usuário clicou no botão de enviar (se foi feito um POST)
@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     // 2. Envia para a função que criamos no Painel.php
-    $resposta = $painel->cadastrarEmpresa($dadosParaNode);
+    $resposta = $painel->cadastrar($dadosParaNode);
 
     // 3. Verifica se deu certo (Código 200 ou 201 significa Sucesso)
     if ($resposta['http_code'] == 200 || $resposta['http_code'] == 201) {
         $mensagem = '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        Conta criada com sucesso! <a href="login.php" class="alert-link">Clique aqui para entrar</a>.
+                        Conta criada com sucesso! <a href="../empresa/inicioEmpresa.php" class="alert-link">Clique aqui para entrar</a>.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                      </div>';
     } else {

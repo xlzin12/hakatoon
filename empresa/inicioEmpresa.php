@@ -6,10 +6,10 @@
 //     exit; 
 // }
 
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEmpresa.php';
 
 // 1. Inicia a classe
-$usuario = new Painel();
+$usuario = new PainelEmpresa();
 
 // 2. Busca a lista de alunos direto da API Node.js
 $listaDeAlunos = $usuario->listarAlunos();

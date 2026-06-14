@@ -11,19 +11,19 @@ if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
 }
 
 
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEmpresa.php';
 
 $mensagemErro = '';
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $usuario = new Painel();
+    $usuario = new PainelEmpresa();
     
     // Pega os dados digitados (já corrigi os nomes)
     $email = trim($_POST['emailCorporativo'] ?? '');
     $senha = $_POST['senhaHash'] ?? '';
 
     // Chama a função (Lembrando que a sua função pede primeiro a senha, depois o email)
-    $resultado = $usuario->loginEmpresa($senha, $email);
+    $resultado = $usuario->login($senha, $email);
 
     // Se o login for um sucesso (código 200)
     if ($resultado['status'] == 200 || $resultado['status'] == 201) {

@@ -6,9 +6,9 @@
 //     exit; 
 // }
 
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEmpresa.php';
 
-$usuario = new Painel();
+$usuario = new PainelEmpresa();
 
 // Puxa os dados da API (Vagas)
 $listaDeVagas = $usuario->listarVagas();

@@ -11,19 +11,19 @@ if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
     }
     exit;
 }
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEstudante.php';
 
 $mensagemErro = '';
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $usuario = new Painel();
+    $usuario = new PainelEstudante();
     
     // Pega os dados digitados (já corrigi os nomes)
     $email = trim($_POST['emailAcademico'] ?? '');
     $senha = $_POST['senha'] ?? '';
 
     // Chama a função (senha primeiro, depois email)
-    $resultado = $usuario->loginEstudante($senha, $email);
+    $resultado = $usuario->login($senha, $email);
 
     // Se o login for um sucesso (código 200)
     if ($resultado['status'] == 200 || $resultado['status'] == 201) {
