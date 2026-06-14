@@ -255,6 +255,7 @@ header {
     border-left: 4px solid var(--cor-azul-principal);
     color: var(--cor-azul-principal);
 }
+
 /* Container principal do menu */
 .nav-estagios-aluno {
     width: 220px;
@@ -272,7 +273,8 @@ header {
     padding: 13px 20px;
     text-decoration: none;
     font-weight: 600;
-    color: #6c757d; /* Cinza para itens não selecionados */
+    color: #6c757d;
+    /* Cinza para itens não selecionados */
     transition: background-color .2s;
     border-left: 4px solid transparent;
 }
@@ -286,15 +288,140 @@ header {
 /* 🟢 ITEM ATIVO (Selecionado) - Borda e Cor Azul Claro */
 .nav-estagios-aluno a.ativo {
     background-color: #f0f4f8;
-    border-left: 4px solid #17a2b8; /* Borda Azul Claro */
-    color: #17a2b8; /* Texto Azul Claro */
+    border-left: 4px solid #17a2b8;
+    /* Borda Azul Claro */
+    color: #17a2b8;
+    /* Texto Azul Claro */
 }
 
 /* 🟢 Força o texto interno a ficar Azul Claro quando ativo */
 .nav-estagios-aluno a.ativo .nav-esagios-texto-aluno {
-    color: #17a2b8; 
+    color: #17a2b8;
 }
 
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* ── Sidebar do estudante ── */
+.nav-estagios {
+    width: 220px;
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 3px solid var(--cor-borda-clara, #EBEBEB);
+    min-height: 100%;
+}
+
+.nav-estagios a {
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #6c757d;
+    transition: background .2s;
+}
+
+.nav-estagios a:hover {
+    background-color: #f0f4f8;
+    transform: none;
+}
+
+.nav-estagios a.ativo {
+    background-color: #f0f4f8;
+    border-left: 4px solid var(--cor-azul-claro, #17A2B8);
+    color: var(--cor-azul-claro, #17A2B8);
+}
+
+.nav-estagios a img {
+    width: 22px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* ── Cards das vagas ── */
+.card-vaga {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: box-shadow .2s;
+    cursor: pointer;
+}
+
+.card-vaga:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+}
+
+.icone-vaga-box {
+    width: 48px;
+    height: 48px;
+    background: #f0f4f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-vaga-box i {
+    font-size: 1.35rem;
+    color: var(--cor-azul-principal, #0056A3);
+}
+
+/* ── Box principal ── */
+.box-painel {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.box-painel-header {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid #f1f3f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ── Badge status ── */
+.badge-status {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* ── Separador pontilhado ── */
+.dot-sep {
+    color: #adb5bd;
+    margin: 0 4px;
+}
+
+/* ── Notificação no sino ── */
+.btn-sino {
+    position: relative;
+}
+
+.btn-sino .badge-sino {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    font-size: .65rem;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -496,7 +623,8 @@ body {
     .menu-hamburguer .linha {
         width: 24px;
         height: 3px;
-        background-color: #17a2b8; /* Cor alterada aqui */
+        background-color: #17a2b8;
+        /* Cor alterada aqui */
         border-radius: 2px;
         transition: all .3s;
     }
@@ -516,18 +644,20 @@ body {
     }
 
     /* Quando clica no hambúrguer, o menu desliza para dentro */
-    .menu-checkbox:checked ~ .nav-estagios-aluno {
+    .menu-checkbox:checked~.nav-estagios-aluno {
         left: 0;
     }
 
     /* Animação do X no hambúrguer */
-    .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(1) {
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-    .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(2) {
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(2) {
         opacity: 0;
     }
-    .menu-checkbox:checked ~ .menu-hamburguer .linha:nth-child(3) {
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
@@ -668,6 +798,7 @@ body {
         box-shadow: 2px 0 15px rgba(0, 0, 0, .1);
         overflow-y: auto;
     }
+
     .menu-checkbox:checked~.nav-estagios {
         left: 0;
     }
@@ -684,5 +815,3 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-
-
