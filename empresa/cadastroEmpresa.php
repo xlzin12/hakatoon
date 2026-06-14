@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Criar Conta - UniALFA</title>
-   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="../assets/css/style.css">
    
    
 </head>
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="../assets/imagens/logo-unialfa.png" style="width: 150px;" alt="Logo UniALFA">
         <div>
             <span class="text-muted">Já tem uma conta?</span>
-            <a href="empresa.php" class="text-decoration-none fw-bold texto-azul ms-1">Entrar</a>
+            <a href="loginEmpresa.php" class="text-decoration-none fw-bold texto-azul ms-1">Entrar</a>
         </div>
     </header>
 

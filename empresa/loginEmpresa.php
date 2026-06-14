@@ -130,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     </button>
 
                     <div class="text-center ">
-                        <a href="cadastro.php" class="mb-2 text-decoration-none border-0">Ainda não possui conta?</a>
-                        <a href="cadastro.php" class="btn p-3 mt-2 btn-outline-primary w-100 fw-bold">Criar conta da empresa</a>
+                        <a href="../empresa/cadastroEmpresa.php" class="mb-2 text-decoration-none border-0">Ainda não possui conta?</a>
+                        <a href="../empresa/cadastroEmpresa.php" class="btn p-3 mt-2 btn-outline-primary w-100 fw-bold">Criar conta da empresa</a>
                     </div>
 
                 </form>

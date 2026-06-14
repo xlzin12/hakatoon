@@ -36,7 +36,7 @@ $paginaAtual = basename($_SERVER['PHP_SELF']);
     </a>
 
     <!-- Sair -->
-    <a href="index.php" class="text-decoration-none px-3 d-flex align-items-center py-2 mt-auto mb-4">
+    <a href="../index.php" class="text-decoration-none px-3 d-flex align-items-center py-2 mt-auto mb-4">
         <img src="../assets/imagens/portal-estagio/Sair.png" alt="">
         <span class="mb-0 ms-3 fw-bold nav-esagios-texto-sair text-muted">Sair</span>
     </a>
