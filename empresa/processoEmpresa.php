@@ -5,9 +5,9 @@
 //     exit;
 // }
 
-require_once '../classes/Painel.php';
+require_once '../classes/PainelEmnpresa.php';
 
-$usuario = new Painel();
+$usuario = new PainelEmpresa();
 
 // ── Busca vagas e candidaturas da API Node.js ─────────────────────────────────
 $respostaVagas       = $usuario->listarVagas();        // GET /vagas
